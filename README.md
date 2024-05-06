@@ -28,3 +28,6 @@ Follow these steps to set up the project:
     To run the project locally using Streamlit, activate your virtual environment and use the      following command: 
      ```bash
    streamlit run app.py
+
+4. Sample:
+   ![Screenshot 2024-05-06 104818](https://github.com/s-akash-s/Auto-Generate-Post/assets/111418379/5d2b3083-75b0-4350-ad85-ae2ad4206748)
