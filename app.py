@@ -2,24 +2,24 @@ import streamlit as st
 from langchain.prompts import PromptTemplate
 from langchain.llms import CTransformers
 
-
+#function to generate a respnse using llama 2
 def LLamaresponse(input_text, number_words, blog_styles, post_type):
-    if not number_words.isdigit():
+    if not number_words.isdigit(): #conditional statement to check the is no of words are provided or no
         number_words = '300'
     llm=CTransformers(model="model/llama-2-7b-chat.ggmlv3.q8_0.bin",
                       model_type="llama",
                       config={'max_new_tokens':int(number_words),
-                              'temperature':0.01 #less becasue to get new reponses everytime 
+                              'temperature':0.01 #less temp becasue to get new reponses everytime 
                               })
 
-
+#propmt which will be passed 
     template="""
        Generate a {post_type} social media post for the topic {input_text}, which should be within {number_words} words for {blog_styles} social media platform with the hashtags.
 """
     prompt=PromptTemplate(input_variables=['input_text','number_words','blog_styles'],
                          template=template)
 
-    
+    #creating response
     response= llm(prompt.format(blog_styles=blog_styles,post_type=post_type, input_text=input_text,number_words=number_words))
     print(response)
     return response
@@ -29,9 +29,9 @@ st.set_page_config(page_title = "Generate Post",
                    layout='centered',
                    initial_sidebar_state='collapsed')
 
-st.header("Generate Posts 🤖")
+st.header("Generate Posts 🤖") #header
 
-input_text=st.text_input("Enter the topic")
+input_text=st.text_input("Enter the topic 👨🏻‍💻")
 post_type=st.selectbox("Post Type", ('Informative', 'Promotional', 'Inspirational'), index=0)
 col1, col2, col3 = st.columns([3,3,3])
 with col1:
