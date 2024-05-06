@@ -30,4 +30,5 @@ Follow these steps to set up the project:
    streamlit run app.py
 
 4. Sample:
-   ![Screenshot 2024-05-06 104818](https://github.com/s-akash-s/Auto-Generate-Post/assets/111418379/5d2b3083-75b0-4350-ad85-ae2ad4206748)
+   ![Screenshot 2024-05-06 104818](https://github.com/s-akash-s/Auto-Generate-Post/assets/111418379/5dc6b8fd-76cc-4512-bdd5-85537a7ac0f0)
+
